@@ -37,12 +37,12 @@ export default function Sidebar() {
                         <X className="h-6 w-6" />
                     </button>
                 </div>
-                <nav className="flex-1 p-4 space-y-2">
+                <nav className="flex flex-col p-4 space-y-2">
                     {user && (
                         <>
                             <Button
                                 variant="ghost"
-                                className="flex items-center w-full p-2 text-left rounded-md hover:bg-accent hover:scale-105 transition-transform duration-200 border border-transparent hover:border-primary"
+                                className="flex items-center justify-start w-full p-2 text-left rounded-md hover:bg-accent hover:shadow-lg transition-all duration-200 border border-transparent hover:border-primary"
                                 onClick={() => router.push('/profile')}
                             >
                                 <User className="mr-2 h-5 w-5" /> Профиль
@@ -51,14 +51,14 @@ export default function Sidebar() {
                                 <>
                                     <Button
                                         variant="ghost"
-                                        className="flex items-center w-full p-2 text-left rounded-md hover:bg-accent hover:scale-105 transition-transform duration-200 border border-transparent hover:border-primary"
+                                        className="flex items-center justify-start w-full p-2 text-left rounded-md hover:bg-accent hover:shadow-lg transition-all duration-200 border border-transparent hover:border-primary"
                                         onClick={() => router.push('/tests')}
                                     >
                                         <FileText className="mr-2 h-5 w-5" /> Мои тесты
                                     </Button>
                                     <Button
                                         variant="ghost"
-                                        className="flex items-center w-full p-2 text-left rounded-md hover:bg-accent hover:scale-105 transition-transform duration-200 border border-transparent hover:border-primary"
+                                        className="flex items-center justify-start w-full p-2 text-left rounded-md hover:bg-accent hover:shadow-lg transition-all duration-200 border border-transparent hover:border-primary"
                                         onClick={() => router.push('/tests/create')}
                                     >
                                         <FileText className="mr-2 h-5 w-5" /> Создать тест
@@ -67,7 +67,7 @@ export default function Sidebar() {
                             ) : (
                                 <Button
                                     variant="ghost"
-                                    className="flex items-center w-full p-2 text-left rounded-md hover:bg-accent hover:scale-105 transition-transform duration-200 border border-transparent hover:border-primary"
+                                    className="flex items-center justify-start w-full p-2 text-left rounded-md hover:bg-accent hover:shadow-lg transition-all duration-200 border border-transparent hover:border-primary"
                                     onClick={() => router.push('/tests')}
                                 >
                                     <FileText className="mr-2 h-5 w-5" /> Доступные тесты
@@ -76,7 +76,7 @@ export default function Sidebar() {
                             {user.role === 'creator' && (
                                 <Button
                                     variant="ghost"
-                                    className="flex items-center w-full p-2 text-left rounded-md hover:bg-accent hover:scale-105 transition-transform duration-200 border border-transparent hover:border-primary"
+                                    className="flex items-center justify-start w-full p-2 text-left rounded-md hover:bg-accent hover:shadow-lg transition-all duration-200 border border-transparent hover:border-primary"
                                     onClick={() => router.push('/stats')}
                                 >
                                     <BarChart2 className="mr-2 h-5 w-5" /> Статистика
@@ -86,7 +86,7 @@ export default function Sidebar() {
                     )}
                     <Button
                         variant="ghost"
-                        className="flex items-center w-full p-2 text-left rounded-md hover:bg-accent hover:scale-105 transition-transform duration-200 border border-transparent hover:border-primary"
+                        className="flex items-center justify-start w-full p-2 text-left rounded-md hover:bg-accent hover:shadow-lg transition-all duration-200 border border-transparent hover:border-primary"
                         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                     >
                         {theme === 'dark' ? <Sun className="mr-2 h-5 w-5" /> : <Moon className="mr-2 h-5 w-5" />}
@@ -95,7 +95,7 @@ export default function Sidebar() {
                     {user && (
                         <Button
                             variant="ghost"
-                            className="flex items-center w-full p-2 text-left rounded-md hover:bg-accent hover:scale-105 transition-transform duration-200 border border-transparent hover:border-red-500 text-red-500"
+                            className="flex items-center justify-start w-full p-2 text-left rounded-md hover:bg-accent hover:shadow-lg transition-all duration-200 border border-transparent hover:border-red-500 text-red-600"
                             onClick={() => {
                                 logout();
                                 router.push('/login');
