@@ -62,7 +62,7 @@ export default function TakeTestPage() {
             });
             const result = await res.json();
             if (res.ok) {
-                router.push(`/tests/result/${id}`);
+                router.push(`/tests/`);
             } else {
                 setError(result.detail || 'Ошибка отправки ответов');
             }
