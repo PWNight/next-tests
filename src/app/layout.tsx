@@ -3,6 +3,7 @@ import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import Sidebar from '@/components/Sidebar';
 import { AuthProvider } from '@/contexts/AuthContext';
+import metaData from '../../headers.json';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,6 +19,15 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" suppressHydrationWarning>
+        <head>
+            {Object.entries(metaData.names).map(([name, content]) => (
+                <meta key={name} name={name} content={content} />
+            ))}
+            {Object.entries(metaData.properties).map(([property, content]) => (
+                <meta key={property} property={property} content={content} />
+            ))}
+            <title>{metaData.properties['og:title']}</title>
+        </head>
         <body className={`${inter.className} bg-background text-foreground`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <AuthProvider>

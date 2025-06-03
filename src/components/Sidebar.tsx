@@ -3,7 +3,7 @@
 import { useContext, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { AuthContext } from '@/contexts/AuthContext';
-import { Sun, Moon, LogOut, User, FileText, BarChart2, Menu, X } from 'lucide-react';
+import {Sun, Moon, LogOut, User, FileText, BarChart2, Menu, X, Settings2} from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -89,8 +89,7 @@ export default function Sidebar() {
                         className="flex items-center justify-start w-full p-2 text-left rounded-md hover:bg-accent hover:shadow-lg transition-all duration-200 border border-transparent hover:border-primary"
                         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                     >
-                        {theme === 'dark' ? <Sun className="mr-2 h-5 w-5" /> : <Moon className="mr-2 h-5 w-5" />}
-                        {theme === 'dark' ? 'Светлая тема' : 'Темная тема'}
+                        <Settings2 className="mr-2 h-5 w-5"/> Сменить тему
                     </Button>
                     {user && (
                         <Button
